@@ -19,10 +19,9 @@ Useful Collection of Visual Studio Code Snippets
 3. Click:  File -> Preferences -> User Snippets
 4. Select language for desired Snippet
 5. Copy and paste the Snippet 
-```
-Sometimes you have to reload Visual Studio Code for the changes to take effect. In order to do so, press 
-Ctrl-Shift-P (Windows, Linux) or Cmd-Shift-P (OSX) to open the command palette and type "Reload Window".
-```
+
+>Sometimes you have to reload Visual Studio Code for the changes to take effect. In order to do so, press Ctrl-Shift-P (Windows, Linux) or Cmd-Shift-P (OSX) to open the command palette and type "Reload Window".
+
 ##Usage
 1. Launch Visual Studio Code
 2. Open or create a new File
