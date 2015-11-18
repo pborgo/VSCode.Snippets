@@ -1,0 +1,138 @@
+{
+	"Angular 1.x TS Module": {
+		"prefix": "ng-module",
+		"description": "Angular 1.x TypeScript Module",
+		"body": [
+			"module ${module} {",
+    			"\t'use strict';",
+				"",
+    			"\tangular.module('${module}', [$1]);",
+			"}"
+		]
+	},
+	"Angular 1.x and TS Controller": {
+		"prefix": "ng-ctrl",
+		"description": "Angular 1.x TypeScript Controller",
+		"body": [
+			"module ${module} {",
+				"\t'use strict';",
+				"\t",
+				"\tinterface I${Controller} {",
+					"\t\t",
+				"\t}",
+				"\t",
+				"\tclass ${Controller} implements I${Controller} {",
+					"\t\tpublic static ctrlId: string = '$1';",
+					"\t\tpublic static $inject: string[] = ['${dependency}'];",
+					"\t\t",
+					"\t\tpublic constructor(private ${dependency}: ${type}) {",
+					"\t\t\t$5",
+					"\t\t}",
+				"\t}",
+				"\t",
+				"\tangular.module('${module}').controller(${Controller}.ctrlId, ${Controller});",
+			"}"
+		]
+	},
+	"Angular 1.x TS Service": {
+		"prefix": "ng-svc",
+		"description": "Angular 1.x TypeScript Service",
+		"body": [
+			"module ${module} {",
+				"\t'use strict';",
+				"\t",
+				"\tinterface I${Service} {",
+					"\t\t",
+				"\t}",
+				"\t",
+				"\tclass ${Service} implements I${Service} {",
+					"\t\tpublic static svcId: string = '$1';",
+					"\t\tpublic static $inject: string[] = ['${dependency}'];",
+					"\t\t",
+					"\t\tpublic constructor(private ${dependency}: ${type}) {",
+					"\t\t\t$2",
+					"\t\t}",
+				"\t}",
+				"\t",
+				"\tangular.module('${module}').service(${Service}.svcId, ${Service});",
+			"}"
+		]
+	},
+	"Angular 1.x TS Directive": {
+		"prefix": "ng-directive",
+		"description": "Angular 1.x TypeScript Directive",
+		"body": [
+			"module ${module} {",
+				"\t'use strict';",
+				"\t",
+				"\timport IDirective = angular.IDirective;",
+				"\t",
+				"\tinterface I${Directive}Scope {",
+					"\t\t'${property}': ${type}",
+				"\t}",
+				"\t",
+				"\tclass ${Directive} implements IDirective {",
+					"\t\tpublic static directiveId: string = '$1';",
+					"\t\tpublic static $inject: string[] = [];",
+					"\t\t",
+					"\t\tpublic constructor() {",
+						"\t\t\t",
+					"\t\t}",
+					"\t\t",
+					"\t\tpublic static instance(): IDirective {",
+						"\t\t\treturn new ${Directive}();",
+					"\t\t}",
+					"\t\t",
+					"\t\tpublic restrict: string = 'E';",
+					"\t\tpublic scope: I${Directive}Scope = {",
+						"\t\t\t'${property}': '@'",
+					"\t\t};",
+					"\t\tpublic templateUrl: string = '$3';",
+				"\t}",
+				"\t",
+				"\tangular.module('${module}').directive(${Directive}.directiveId, ${Directive}.instance);",
+			"}"
+		]
+	},
+	"Angular 1.x TS Constructor": {
+		"prefix": "ng-ctor",
+		"description": "Angular 1.x TypeScript Constructor",
+		"body": [
+			"\tpublic static $inject: string[] = ['${dependency}'];",
+			"\tpublic constructor(private ${dependency}: ${type}) {"
+		]
+	},
+	"TS Class with Interface": {
+		"prefix": "ts-class",
+		"description": "TypeScript Class with Interface",
+		"body": [
+			"module ${module} {",
+				"\t'use strict';",
+				"\t",
+				"\tinterface I${Name} {",
+					"\t\t'${property}': ${type}",
+				"\t}",
+				"\t",
+				"\tclass ${Name} implements I${Name} {",
+					"\t\tpublic constructor(public ${property}: ${type}) {",
+						"\t\t\t$1",
+					"\t\t}",
+				"\t}",
+			"}"
+		]
+	},	
+	"TS Import with Alias": {
+		"prefix": "ts-alias",
+		"description": "TypeScript Import with Alias",
+		"body": ["import ${Type} = ${Module}.${Type};"]
+	},
+	"TS Property": {
+		"prefix": "ts-prop",
+		"description": "TypeScript Property with Getter and Setter",
+		"body": [
+			"private _${property}: ${type}$1;",
+        	"public get ${property}(): ${type} { return this._${property}; }",
+			"public set ${property}(value: ${type}) { this._${property} = value; }"
+		]
+	}
+}
