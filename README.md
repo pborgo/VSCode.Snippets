@@ -3,15 +3,21 @@ Useful Collection of Visual Studio Code Snippets
 
 ##Collection
 
+#####JavaScript:
+- **gulp-init** initializes the gulpfile.js
+- **gulp-pipe** pipes a Gulp Plugin (with gulp-load-plugins)
+- **gulp-req** requires a Gulp Plugin
+- **gulp-task** adds a Gulp Task
+
 #####TypeScript:
-- **ng-ctor** Angular Constructor with $inject
-- **ng-ctrl** Angular Controller with Interface
-- **ng-directive** Angular Directive
-- **ng-module** Angular Module
-- **ng-svc** Angular Service with Interface
-- **ts-alias** TypeScript Import with Alias
-- **ts-class** TypeScript Class with Interface
-- **ts-prop** TypeScript Property with Getter and Setter
+- **ng-ctor** creates an Angular 1.x Constructor (with $inject)
+- **ng-ctrl** creates an Angular 1.x Controller (with Interface)
+- **ng-directive** creates an Angular 1.x Directive
+- **ng-module** creates an Angular 1.x Module
+- **ng-svc** creates Angular 1.x Service (with Interface)
+- **ts-alias** adds a TypeScript Import (with Alias)
+- **ts-class** creates a TypeScript Class (with Interface)
+- **ts-prop** adds a TypeScript Property (with Getter and Setter)
 
 ##Installation
 1. Install Visual Studio Code

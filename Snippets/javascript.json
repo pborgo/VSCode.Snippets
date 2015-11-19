@@ -1,0 +1,49 @@
+{
+	"Gulp Initialization": {
+		"prefix": "gulp-init",
+		"description": "Initializes the gulpfile.js",
+		"body": [
+			"var gulp = require('gulp');",
+			"var args = require('yargs').argv;",
+			"var del = require('del');",
+			"",
+			"var $ = require('gulp-load-plugins')({ lazy: true });",
+			"var config = require('./gulpconfig')();",
+			"",
+			"gulp.task('default', $.taskListing);",
+			"",
+			"gulp.task('${name}', ['${dependency}'], function() {",
+  				"\treturn gulp",
+				"\t.src(['${glob}'])",
+    			"\t.pipe($.${plugin}($1))",
+    			"\t.pipe(gulp.dest('${destination}'));",
+			"});"
+		]
+	},		
+	"Gulp pipe Plugin": {
+		"prefix": "gulp-pipe",
+		"description": "Pipes a Gulp Plugin (with gulp-load-plugins)",
+		"body": [
+			".pipe($.${plugin}($1))"
+		]
+	},
+	"Gulp require Plugin": {
+		"prefix": "gulp-req",
+		"description": "Requires a Gulp Plugin",
+		"body": [
+			"var ${name} = require('${name}');"
+		]
+	},
+	"Gulp Task": {
+		"prefix": "gulp-task",
+		"description": "Adds a Gulp Task",
+		"body": [
+			"gulp.task('${name}', ['${dependency}'], function() {",
+  				"\treturn gulp",
+				"\t.src(['${glob}'])",
+    			"\t.pipe($.${plugin}($1))",
+    			"\t.pipe(gulp.dest('${destination}'));",
+			"});"
+		]
+	}
+}

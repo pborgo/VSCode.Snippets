@@ -1,18 +1,15 @@
 {
-	"Angular 1.x TS Module": {
-		"prefix": "ng-module",
-		"description": "Angular 1.x TypeScript Module",
+	"Angular 1.x TS Constructor": {
+		"prefix": "ng-ctor",
+		"description": "Creates an Angular 1.x Constructor (with $inject)",
 		"body": [
-			"module ${module} {",
-    			"\t'use strict';",
-				"",
-    			"\tangular.module('${module}', [$1]);",
-			"}"
+			"\tpublic static $inject: string[] = ['${dependency}'];",
+			"\tpublic constructor(private ${dependency}: ${type}) {"
 		]
 	},
 	"Angular 1.x and TS Controller": {
 		"prefix": "ng-ctrl",
-		"description": "Angular 1.x TypeScript Controller",
+		"description": "Creates an Angular 1.x Controller (with Interface)",
 		"body": [
 			"module ${module} {",
 				"\t'use strict';",
@@ -34,33 +31,9 @@
 			"}"
 		]
 	},
-	"Angular 1.x TS Service": {
-		"prefix": "ng-svc",
-		"description": "Angular 1.x TypeScript Service",
-		"body": [
-			"module ${module} {",
-				"\t'use strict';",
-				"\t",
-				"\tinterface I${Service} {",
-					"\t\t",
-				"\t}",
-				"\t",
-				"\tclass ${Service} implements I${Service} {",
-					"\t\tpublic static svcId: string = '$1';",
-					"\t\tpublic static $inject: string[] = ['${dependency}'];",
-					"\t\t",
-					"\t\tpublic constructor(private ${dependency}: ${type}) {",
-					"\t\t\t$2",
-					"\t\t}",
-				"\t}",
-				"\t",
-				"\tangular.module('${module}').service(${Service}.svcId, ${Service});",
-			"}"
-		]
-	},
 	"Angular 1.x TS Directive": {
 		"prefix": "ng-directive",
-		"description": "Angular 1.x TypeScript Directive",
+		"description": "Creates an Angular 1.x Directive",
 		"body": [
 			"module ${module} {",
 				"\t'use strict';",
@@ -94,17 +67,49 @@
 			"}"
 		]
 	},
-	"Angular 1.x TS Constructor": {
-		"prefix": "ng-ctor",
-		"description": "Angular 1.x TypeScript Constructor",
+	"Angular 1.x TS Module": {
+		"prefix": "ng-module",
+		"description": "Creates an Angular 1.x Module",
 		"body": [
-			"\tpublic static $inject: string[] = ['${dependency}'];",
-			"\tpublic constructor(private ${dependency}: ${type}) {"
+			"module ${module} {",
+    			"\t'use strict';",
+				"",
+    			"\tangular.module('${module}', [$1]);",
+			"}"
 		]
+	},
+	"Angular 1.x TS Service": {
+		"prefix": "ng-svc",
+		"description": "Creates Angular 1.x Service (with Interface)",
+		"body": [
+			"module ${module} {",
+				"\t'use strict';",
+				"\t",
+				"\tinterface I${Service} {",
+					"\t\t",
+				"\t}",
+				"\t",
+				"\tclass ${Service} implements I${Service} {",
+					"\t\tpublic static svcId: string = '$1';",
+					"\t\tpublic static $inject: string[] = ['${dependency}'];",
+					"\t\t",
+					"\t\tpublic constructor(private ${dependency}: ${type}) {",
+					"\t\t\t$2",
+					"\t\t}",
+				"\t}",
+				"\t",
+				"\tangular.module('${module}').service(${Service}.svcId, ${Service});",
+			"}"
+		]
+	},
+	"TS Import with Alias": {
+		"prefix": "ts-alias",
+		"description": "Adds a TypeScript Import (with Alias)",
+		"body": ["import ${Type} = ${Module}.${Type};"]
 	},
 	"TS Class with Interface": {
 		"prefix": "ts-class",
-		"description": "TypeScript Class with Interface",
+		"description": "Creates a TypeScript Class (with Interface)",
 		"body": [
 			"module ${module} {",
 				"\t'use strict';",
@@ -121,14 +126,9 @@
 			"}"
 		]
 	},	
-	"TS Import with Alias": {
-		"prefix": "ts-alias",
-		"description": "TypeScript Import with Alias",
-		"body": ["import ${Type} = ${Module}.${Type};"]
-	},
 	"TS Property": {
 		"prefix": "ts-prop",
-		"description": "TypeScript Property with Getter and Setter",
+		"description": "Adds a TypeScript Property (with Getter and Setter)",
 		"body": [
 			"private _${property}: ${type}$1;",
         	"public get ${property}(): ${type} { return this._${property}; }",
