@@ -13,13 +13,13 @@
 			"gulp.task('default', $.taskListing);",
 			"",
 			"gulp.task('${name}', ['${dependency}'], function() {",
-  				"\treturn gulp",
+				"\treturn gulp",
 				"\t.src(['${glob}'])",
-    			"\t.pipe($.${plugin}($1))",
-    			"\t.pipe(gulp.dest('${destination}'));",
+				"\t.pipe($.${plugin}($1))",
+				"\t.pipe(gulp.dest('${destination}'));",
 			"});"
 		]
-	},		
+	},
 	"Gulp pipe Plugin": {
 		"prefix": "gulp-pipe",
 		"description": "Pipes a Gulp Plugin (with gulp-load-plugins)",
@@ -39,10 +39,10 @@
 		"description": "Adds a Gulp Task",
 		"body": [
 			"gulp.task('${name}', ['${dependency}'], function() {",
-  				"\treturn gulp",
+				"\treturn gulp",
 				"\t.src(['${glob}'])",
-    			"\t.pipe($.${plugin}($1))",
-    			"\t.pipe(gulp.dest('${destination}'));",
+				"\t.pipe($.${plugin}($1))",
+				"\t.pipe(gulp.dest('${destination}'));",
 			"});"
 		]
 	}

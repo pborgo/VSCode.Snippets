@@ -72,9 +72,9 @@
 		"description": "Creates an Angular 1.x Module",
 		"body": [
 			"module ${module} {",
-    			"\t'use strict';",
+				"\t'use strict';",
 				"",
-    			"\tangular.module('${module}', [$1]);",
+				"\tangular.module('${module}', [$1]);",
 			"}"
 		]
 	},
@@ -125,13 +125,13 @@
 				"\t}",
 			"}"
 		]
-	},	
+	},
 	"TS Property": {
 		"prefix": "ts-prop",
 		"description": "Adds a TypeScript Property (with Getter and Setter)",
 		"body": [
 			"private _${property}: ${type}$1;",
-        	"public get ${property}(): ${type} { return this._${property}; }",
+			"public get ${property}(): ${type} { return this._${property}; }",
 			"public set ${property}(value: ${type}) { this._${property} = value; }"
 		]
 	}
