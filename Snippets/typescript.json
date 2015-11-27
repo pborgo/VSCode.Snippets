@@ -80,7 +80,7 @@
 	},
 	"Angular 1.x TS Service": {
 		"prefix": "ng-svc",
-		"description": "Creates Angular 1.x Service (with Interface)",
+		"description": "Creates an Angular 1.x Service (with Interface)",
 		"body": [
 			"module ${module} {",
 				"\t'use strict';",
@@ -99,6 +99,40 @@
 				"\t}",
 				"\t",
 				"\tangular.module('${module}').service(${Service}.svcId, ${Service});",
+			"}"
+		]
+	},
+	"Angular Component": {
+    	"prefix": "ng2-comp",
+		"description": "Creates an Angular 2.x Component",
+    	"body": [
+      		"import {Component, View} from 'angular2/angular2';",
+      		"",
+      		"@Component({",
+      			"\tselector: '$1'",
+			"})",
+			"@View({",
+				"\tdirectives: [$2],",
+      			"\ttemplateUrl: 'app/components/${3:name}/${3:name}.component.html'",
+			"})",
+      		"export class ${4:Name}Component {",
+      			"\t$5",
+      			"\tconstructor() { }",
+      			"\t",
+      		"}"
+		]
+	},
+	"Angular Service": {
+		"prefix": "ng2-svc",
+		"description": "Creates an Angular 2.x Service",
+		"body": [
+			"import {Injectable} from 'angular2/angular2';",
+			"",
+			"@Injectable()",
+			"export class ${1:Name}Service {",
+				"\t$0",
+				"\tconstructor() { }",
+				"\t",
 			"}"
 		]
 	},
