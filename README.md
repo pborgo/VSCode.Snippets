@@ -16,6 +16,8 @@ Useful Collection of Visual Studio Code Snippets
 - **ng-directive** creates an Angular 1.x Directive
 - **ng-module** creates an Angular 1.x Module
 - **ng-svc** creates Angular 1.x Service (with Interface)
+- **ng2-comp** creates an Angular 2.x Component
+- **ng2-svc** creates Angular 2.x Service
 - **ts-alias** adds a TypeScript Import (with Alias)
 - **ts-class** creates a TypeScript Class (with Interface)
 - **ts-prop** adds a TypeScript Property (with Getter and Setter)
@@ -25,7 +27,7 @@ Useful Collection of Visual Studio Code Snippets
 2. Launch Visual Studio Code
 3. Click:  File -> Preferences -> User Snippets
 4. Select language for desired Snippet
-5. Copy and paste the Snippet 
+5. Copy and paste the Snippet
 
 >Sometimes you have to reload Visual Studio Code for the changes to take effect. In order to do so, press Ctrl-Shift-P (Windows, Linux) or Cmd-Shift-P (OSX) to open the command palette and type "Reload Window".
 
