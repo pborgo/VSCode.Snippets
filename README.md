@@ -4,6 +4,7 @@ Useful Collection of Visual Studio Code Snippets
 ##Collection
 
 #####JavaScript:
+- **gulp-config** initializes the gulpconfig.js
 - **gulp-init** initializes the gulpfile.js
 - **gulp-pipe** pipes a Gulp Plugin (with gulp-load-plugins)
 - **gulp-req** requires a Gulp Plugin
